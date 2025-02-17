@@ -1,6 +1,5 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-import 
 import { ref } from 'vue';
 
 defineProps({
