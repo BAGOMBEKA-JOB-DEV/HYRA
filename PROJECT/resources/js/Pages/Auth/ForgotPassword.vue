@@ -17,6 +17,7 @@ const form = useForm({
 });
 
 const submit = () => {
+    console.log('REQUESTED',form.email)
     form.post(route('password.email'));
 };
 </script>
