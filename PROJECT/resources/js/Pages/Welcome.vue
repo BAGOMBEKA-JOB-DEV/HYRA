@@ -3,6 +3,8 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import Carousel from '@/Components/Carousel.vue';
 import Search from '@/Components/Forms/Search.vue';
 import ItemCategories from '@/Components/ItemCategories.vue';
+import AccountDropdown from '@/Components/Navbar/AccountDropdown.vue';
+import HelpDropdown from '@/Components/Navbar/HelpDropdown.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
@@ -52,18 +54,12 @@ function toggleMobileMenu() {
 
 
                         <template v-else>
-                            <div class="flex left-0 gap-[50px] mr-[0px] ">
+                            <div class="flex left-0 gap-[25px] mr-[0px] ">
 
-                                <Search class="w-[750px] -mt-5 " />
+                                <Search class="w-[650px] -mt-5 " />
 
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Account
-                                </Link>
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Cart
-                                </Link>
+                                <AccountDropdown/>
+                                <HelpDropdown/>
 
 
                                 <Link :href="route('login')" class="text-sm font-light text-black  hover:text-gray-600 
@@ -210,7 +206,7 @@ function toggleMobileMenu() {
 
                 </div>
 
-
+                <!-- add more data here! -->
                 <footer class="py-10 text-center text-sm text-black dark:text-white/70">
                     HYRA @2025
                 </footer>
