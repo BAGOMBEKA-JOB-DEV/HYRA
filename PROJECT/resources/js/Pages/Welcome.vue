@@ -1,6 +1,10 @@
 <script setup>
+import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import Carousel from '@/Components/Carousel.vue';
+import Search from '@/Components/Forms/Search.vue';
 import ItemCategories from '@/Components/ItemCategories.vue';
+import AccountDropdown from '@/Components/Navbar/AccountDropdown.vue';
+import HelpDropdown from '@/Components/Navbar/HelpDropdown.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
@@ -14,9 +18,10 @@ defineProps({
 });
 
 const carouselItems = [
-    { image: '/assets/images/h2.png' },
+    { image: '/assets/images/h5.jpg' },
     { image: '/assets/images/h1.jpg' },
     { image: '/assets/images/h4.jpg' },
+    { image: '/assets/images/h6.jpg' },
 
 ];
 
@@ -29,21 +34,18 @@ function toggleMobileMenu() {
 
 <template>
 
-    <Head title="Welcome" />
-    <div class="bg-white text-black/50 dark:bg-gray-white  dark:text-white/50 min-h-screen">
+    <Head title="HYRA" />
+    <div class="bg-gray-50 text-black/50 dark:bg-gray-white  dark:text-white/50 min-h-screen">
         <div class="relative flex flex-col items-center selection:bg-[#FF2D20] selection:text-white">
-            <div class="relative w-full max-w-7xl px-6">
-                <header class="flex items-center justify-between py-6 border-b 
+            <div class="relative w-full max-w-7xl px-6 ">
+                <header class="flex items-center justify-between xl:lg:mt-4 mt-10 xl:lg:h-auto h-[90px]  shadow-md px-2 rounded-md  
                 border-gray-200 dark:border-gray-800">
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="h-12 w-auto text-black dark:text-[#FF2D20]">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5 5.25 5.25" />
-                        </svg>
+                    <div class="flex items-center -mt-5 w-[400px]">
+                        <ApplicationLogo
+                            class="xl:lg:w-[200px] w-[99px]  xl:lg:h-auto h-[80px] rounded-md xl:lg:pl-1 " />
                     </div>
                     <!-- Desktop Nav -->
-                    <nav v-if="canLogin" class=" hidden md:flex items-center gap-4">
+                    <nav v-if="canLogin" class=" hidden md:flex items-center gap-4 p-5 pl-">
 
                         <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="text-sm font-medium text-black dark:text-white hover:text-gray-600 
                             dark:hover:text-gray-300">
@@ -52,55 +54,26 @@ function toggleMobileMenu() {
 
 
                         <template v-else>
-                            <div class="flex left-0 gap-[50px] mr-[100px]">
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Log in
-                                </Link>
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Log in
-                                </Link>
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Log in
-                                </Link>
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Log in
-                                </Link>
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Log in
-                                </Link>
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Log in
-                                </Link>
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Log in
-                                </Link>
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Log in
-                                </Link>
-                                <Link :href="route('login')" class="text-sm font-light text-black hover:text-black 
-                                ">
-                                Log in
-                                </Link>
-                            </div>
+                            <div class="flex left-0 gap-[25px] mr-[0px] ">
+
+                                <Search class="w-[650px] -mt-5 " />
+
+                                <AccountDropdown/>
+                                <HelpDropdown/>
 
 
-                            <Link :href="route('login')" class="text-sm font-light text-black  hover:text-gray-600 
+                                <Link :href="route('login')" class="text-sm font-light text-black  hover:text-gray-600 
                                ">
-                            Log in
-                            </Link>
+                                Log in
+                                </Link>
 
-                            <Link v-if="canRegister" :href="route('register')"
-                                class="text-sm font-light text-black  hover:text-gray-600 ">
-                            Register
-                            </Link>
+                                <Link v-if="canRegister" :href="route('register')"
+                                    class="text-sm font-light text-black  hover:text-gray-600 ">
+                                Register
+                                </Link>
+
+
+                            </div>
 
 
                         </template>
@@ -108,14 +81,15 @@ function toggleMobileMenu() {
 
                     <!-- Mobile Menu Button -->
                     <button @click="toggleMobileMenu" class="md:hidden focus:outline-none">
-                        <svg v-if="!mobileMenuOpen" class="w-6 h-6 text-black " fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg v-if="!mobileMenuOpen" class="w-6 h-6 text-black border border-gray-400 mr-3 rounded-[3px]"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
 
-                        <svg v-else class="w-6 h-6 text-black " fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg v-else class="w-5 h-5 text-black mr-3 border border-black rounded-full
+                         transition-transform active:rotate-180 duration-500 ease-out " fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
@@ -123,40 +97,42 @@ function toggleMobileMenu() {
                 </header>
 
                 <!-- Mobile Nav -->
-                <div v-if="mobileMenuOpen && canLogin" class="md:hidden flex flex-col gap-4 py-4">
+                <div v-if="mobileMenuOpen && canLogin" class="md:hidden flex flex-col  gap-4 py-4 px-4 mt-5
+                rounded-md bg-gray-300">
                     <Link v-if="$page.props.auth.user" :href="route('dashboard')"
-                        class="block text-sm font-medium text-black  hover:text-gray-600 ">
+                        class="block text-sm font-medium text-black  hover:text-orange-600 ">
                     Dashboard
                     </Link>
 
                     <template v-else>
-                        <Link :href="route('login')" class="block text-sm font-medium text-black hover:text-gray-600 ">
+                        <Link :href="route('login')"
+                            class="block text-sm font-medium text-black hover:text-orange-600 ">
                         Log in
                         </Link>
 
                         <Link v-if="canRegister" :href="route('register')"
-                            class="block text-sm font-medium text-black dhover:text-gray-600 ">
+                            class="block text-sm font-medium text-black hover:text-orange-600 ">
                         Register
                         </Link>
                     </template>
                 </div>
 
-                <div class="flex flex-col-3 gap-4 w-[1000px]">
+                <div class="xl:lg:flex flex-col-3 gap-4 ">
                     <!-- First Column -->
-                    <div class="p-4 w-[200px] ">
+                    <div class="pr-4 pt-4 xl:lg:w-[200px]  ">
                         <ItemCategories />
                     </div>
 
                     <!-- Second Column -->
                     <div class="  p-4 relative ">
-                        <Carousel :items="carouselItems" :interval="3000" class="w-[700px]" />
+                        <Carousel :items="carouselItems" :interval="3000" class="xl:lg:w-[689px] w-full" />
                     </div>
 
                     <!-- Third Column -->
                     <div class="pt-4 -ml-4 ">
 
 
-                        <div class="bg-white p-4 rounded-md shadow-md  space-y-4 border w-[300px] ">
+                        <div class="bg-white p-4 rounded-md shadow-md  space-y-4 border xl:g:w-[300px] w-full ">
                             <div class="flex items-center gap-3">
                                 <div
                                     class="w-10 h-10 flex items-center justify-center rounded-full border border-orange-400">
@@ -191,7 +167,7 @@ function toggleMobileMenu() {
                         </div>
 
 
-                        <div class="bg-white p-4 rounded-md shadow-md  space-y-4 border w-[300px] mt-5">
+                        <div class="bg-white p-4 rounded-md shadow-md  space-y-4 border xl:lg:w-[300px] w-full mt-5">
                             <div class="flex items-center gap-3">
                                 <div
                                     class="w-10 h-10 flex items-center justify-center rounded-full border border-orange-400">
@@ -230,9 +206,7 @@ function toggleMobileMenu() {
 
                 </div>
 
-
-
-
+                <!-- add more data here! -->
                 <footer class="py-10 text-center text-sm text-black dark:text-white/70">
                     HYRA @2025
                 </footer>

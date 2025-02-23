@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-[800px] overflow-hidden items-center">
+    <div class="relative  overflow-hidden items-center">
       <!-- Carousel Items Container -->
       <div
         class="flex transition-transform duration-500 ease-in-out"
