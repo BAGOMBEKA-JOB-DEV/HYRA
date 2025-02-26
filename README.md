@@ -134,7 +134,7 @@ We welcome contributions to the **HYRA** web app! To contribute:
 
 ## Contact
 
-For support or inquiries, feel free to contact us at support@hyraapp.com.
+For support or inquiries, feel free to contact us at bagombekajob@gmail.com.
 
 ---
 
