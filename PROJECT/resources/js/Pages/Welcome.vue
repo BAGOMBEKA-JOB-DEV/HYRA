@@ -5,6 +5,8 @@ import Search from '@/Components/Forms/Search.vue';
 import ItemCategories from '@/Components/ItemCategories.vue';
 import AccountDropdown from '@/Components/Navbar/AccountDropdown.vue';
 import HelpDropdown from '@/Components/Navbar/HelpDropdown.vue';
+import TopNavBar from '@/Components/Navbar/TopNavBar.vue';
+import Footer from '@/Components/Footer/Footer.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
@@ -33,7 +35,8 @@ function toggleMobileMenu() {
 </script>
 
 <template>
-
+ <!-- top most small navbar -->
+  <TopNavBar/>
     <Head title="HYRA" />
     <div class="bg-gray-50 text-black/50 dark:bg-gray-white  dark:text-white/50 min-h-screen">
         <div class="relative flex flex-col items-center selection:bg-[#FF2D20] selection:text-white">
@@ -210,7 +213,14 @@ function toggleMobileMenu() {
                 <footer class="py-10 text-center text-sm text-black dark:text-white/70">
                     HYRA @2025
                 </footer>
+
+
+
             </div>
         </div>
     </div>
+
+<!-- main footer -->
+<Footer/>
 </template>
+
