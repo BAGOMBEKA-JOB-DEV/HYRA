@@ -7,8 +7,10 @@ import AccountDropdown from '@/Components/Navbar/AccountDropdown.vue';
 import HelpDropdown from '@/Components/Navbar/HelpDropdown.vue';
 import TopNavBar from '@/Components/Navbar/TopNavBar.vue';
 import Footer from '@/Components/Footer/Footer.vue';
+import ProductCarousel from '@/Components/Products/ProductCarousel.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
+import ProductCards from '@/Components/Products/ProductCards.vue';
 
 defineProps({
     canLogin: {
@@ -38,17 +40,19 @@ function toggleMobileMenu() {
  <!-- top most small navbar -->
   <TopNavBar/>
     <Head title="HYRA" />
-    <div class="bg-gray-50 text-black/50 dark:bg-gray-white  dark:text-white/50 min-h-screen">
+    <div  class="bg-blue-200 text-black/50 dark:bg-gray-white  dark:text-white/50 min-h-screen 
+
+    ">
         <div class="relative flex flex-col items-center selection:bg-[#FF2D20] selection:text-white">
             <div class="relative w-full max-w-7xl px-6 ">
-                <header class="flex items-center justify-between xl:lg:mt-4 mt-10 xl:lg:h-auto h-[90px]  shadow-md px-2 rounded-md  
+                <header class="bg-white  flex items-center justify-between xl:lg:mt-4 mt-10 xl:lg:h-auto h-[90px]  shadow-md px-2 rounded-md  
                 border-gray-200 dark:border-gray-800">
                     <div class="flex items-center -mt-5 w-[400px]">
                         <ApplicationLogo
                             class="xl:lg:w-[200px] w-[99px]  xl:lg:h-auto h-[80px] rounded-md xl:lg:pl-1 " />
                     </div>
                     <!-- Desktop Nav -->
-                    <nav v-if="canLogin" class=" hidden md:flex items-center gap-4 p-5 pl-">
+                    <nav v-if="canLogin" class=" hidden md:flex items-center gap-4 p-5 ">
 
                         <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="text-sm font-medium text-black dark:text-white hover:text-gray-600 
                             dark:hover:text-gray-300">
@@ -208,17 +212,16 @@ function toggleMobileMenu() {
                     </div>
 
                 </div>
-
-                <!-- add more data here! -->
-                <footer class="py-10 text-center text-sm text-black dark:text-white/70">
-                    HYRA @2025
-                </footer>
-
-
-
             </div>
         </div>
+           <!-- product carousel -->
+     <ProductCarousel/>
+
+            <!-- product carousel -->
+            <ProductCards />
     </div>
+
+ 
 
 <!-- main footer -->
 <Footer/>
