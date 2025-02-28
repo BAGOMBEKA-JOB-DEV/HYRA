@@ -1,7 +1,7 @@
 
 # HYRA - The Renting Web App
 
-![HYRA](https://github.com/BAGOMBEKA-JOB-DEV/HYRA)
+[HYRA](https://github.com/BAGOMBEKA-JOB-DEV/HYRA)
 
 ## Overview
 
