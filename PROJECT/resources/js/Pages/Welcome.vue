@@ -11,6 +11,8 @@ import ProductCarousel from '@/Components/Products/ProductCarousel.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 import ProductCards from '@/Components/Products/ProductCards.vue';
+import ProductFrames from '@/Components/Products/ProductFrames.vue';
+import ProductDisplay from '@/Components/Products/ProductDisplay.vue';
 
 defineProps({
     canLogin: {
@@ -207,21 +209,24 @@ function toggleMobileMenu() {
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
+           <!-- product carousel -->
+           <ProductCarousel/>
+
+<!-- product carousel -->
+<ProductCards />
+
+<!-- Product frames -->
+ <ProductFrames class="p-6 mt-6 mb-6 bg-white shadow-2xl"/>
+
+ <!-- product display -->
+ <ProductDisplay class="mb-6" />
+
             </div>
         </div>
-           <!-- product carousel -->
-     <ProductCarousel/>
 
-            <!-- product carousel -->
-            <ProductCards />
     </div>
-
- 
 
 <!-- main footer -->
 <Footer/>
