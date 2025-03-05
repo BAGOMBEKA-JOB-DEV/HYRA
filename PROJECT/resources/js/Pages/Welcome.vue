@@ -13,6 +13,8 @@ import { ref } from 'vue';
 import ProductCards from '@/Components/Products/ProductCards.vue';
 import ProductFrames from '@/Components/Products/ProductFrames.vue';
 import ProductDisplay from '@/Components/Products/ProductDisplay.vue';
+import ProductCardLabels from '@/Components/Products/ProductCardLabels.vue';
+import ViewProduct from '@/Components/Products/ViewProduct.vue';
 
 defineProps({
     canLogin: {
@@ -222,6 +224,11 @@ function toggleMobileMenu() {
 
  <!-- product display -->
  <ProductDisplay class="mb-6" />
+
+ <!-- for the product card labels -->
+  <ProductCardLabels class="mb-6" />
+
+  <ViewProduct/>
 
             </div>
         </div>
