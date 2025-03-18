@@ -15,6 +15,7 @@ import ProductFrames from '@/Components/Products/ProductFrames.vue';
 import ProductDisplay from '@/Components/Products/ProductDisplay.vue';
 import ProductCardLabels from '@/Components/Products/ProductCardLabels.vue';
 import ViewProduct from '@/Components/Products/ViewProduct.vue';
+import Cart from '@/Components/Shopping/Cart.vue';
 
 defineProps({
     canLogin: {
@@ -23,6 +24,9 @@ defineProps({
     canRegister: {
         type: Boolean,
     },
+    ShopCart: {
+        type: Boolean,
+    }
 });
 
 const carouselItems = [
@@ -41,10 +45,11 @@ function toggleMobileMenu() {
 </script>
 
 <template>
- <!-- top most small navbar -->
-  <TopNavBar/>
+    <!-- top most small navbar -->
+    <TopNavBar />
+
     <Head title="HYRA" />
-    <div  class="bg-blue-200 text-black/50 dark:bg-gray-white  dark:text-white/50 min-h-screen 
+    <div class="bg-blue-200 text-black/50 dark:bg-gray-white  dark:text-white/50 min-h-screen 
 
     ">
         <div class="relative flex flex-col items-center selection:bg-[#FF2D20] selection:text-white">
@@ -69,8 +74,10 @@ function toggleMobileMenu() {
 
                                 <Search class="w-[650px] -mt-5 " />
 
-                                <AccountDropdown/>
-                                <HelpDropdown/>
+                                <AccountDropdown />
+                                <HelpDropdown />
+
+
 
 
                                 <Link :href="route('login')" class="text-sm font-light text-black  hover:text-gray-600 
@@ -213,29 +220,29 @@ function toggleMobileMenu() {
                         </div>
                     </div>
                 </div>
-           <!-- product carousel -->
-           <ProductCarousel/>
+                <!-- product carousel -->
+                <ProductCarousel />
 
-<!-- product carousel -->
-<ProductCards />
+                <!-- product carousel -->
+                <ProductCards />
 
-<!-- Product frames -->
- <ProductFrames class="p-6 mt-6 mb-6 bg-white shadow-2xl"/>
+                <!-- Product frames -->
+                <ProductFrames class="p-6 mt-6 mb-6 bg-white shadow-2xl" />
 
- <!-- product display -->
- <ProductDisplay class="mb-6" />
+                <!-- product display -->
+                <ProductDisplay class="mb-6" />
 
- <!-- for the product card labels -->
-  <ProductCardLabels class="mb-6" />
+                <!-- for the product card labels -->
+                <ProductCardLabels class="mb-6" />
 
-  <ViewProduct/>
+                <ViewProduct />
+                <Cart />
 
             </div>
         </div>
 
     </div>
 
-<!-- main footer -->
-<Footer/>
+    <!-- main footer -->
+    <Footer />
 </template>
-
