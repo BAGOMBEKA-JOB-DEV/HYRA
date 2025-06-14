@@ -142,5 +142,3 @@ Thank you for using **HYRA**! We hope this platform helps you easily find and re
 
 **Visit the GitHub repository**: [HYRA GitHub](https://github.com/BAGOMBEKA-JOB-DEV/HYRA)
 ```
-
-This `README.md` explains the full functionality of **HYRA**, showcasing the platform's broad capabilities for renting a variety of items. The content highlights key features such as geolocation, real-time availability, flexible rental periods, and user dashboards. It also provides clear steps for getting started with the app and contributing to the project.
