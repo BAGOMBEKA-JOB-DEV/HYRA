@@ -133,6 +133,3 @@ We welcome contributions to the **HYRA** web app! To contribute:
 4. Submit a pull request for review.
 
 Thank you for using **HYRA**! We hope this platform helps you easily find and rent everything you need. Stay tuned for updates and new features coming soon!
-
-**Visit the GitHub repository**: [HYRA GitHub](https://github.com/BAGOMBEKA-JOB-DEV/HYRA)
-```
