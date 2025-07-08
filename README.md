@@ -132,4 +132,18 @@ We welcome contributions to the **HYRA** web app! To contribute:
 3. Implement your changes and write tests if necessary.
 4. Submit a pull request for review.
 
+
+## Contact
+
+For support or inquiries, feel free to contact us at support@hyraapp.com.
+
+---
+
+Thank you for using **HYRA**! We hope this platform helps you easily find and rent everything you need. Stay tuned for updates and new features coming soon!
+
+**Visit the GitHub repository**: [HYRA GitHub](https://github.com/BAGOMBEKA-JOB-DEV/HYRA)
+```
+
+This `README.md` explains the full functionality of **HYRA**, showcasing the platform's broad capabilities for renting a variety of items. The content highlights key features such as geolocation, real-time availability, flexible rental periods, and user dashboards. It also provides clear steps for getting started with the app and contributing to the project.
+
 Thank you for using **HYRA**! We hope this platform helps you easily find and rent everything you need. Stay tuned for updates and new features coming soon!
