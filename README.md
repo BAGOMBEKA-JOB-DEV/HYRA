@@ -1,8 +1,6 @@
 
 # HYRA - The Renting Web App
 
-![HYRA](https://github.com/BAGOMBEKA-JOB-DEV/HYRA)
-
 ## Overview
 
 Welcome to **HYRA**, the ultimate **Renting Web App** that allows users to rent anything they need — from electronics and furniture to vehicles, tools, and more! HYRA makes renting simple, secure, and efficient, connecting renters with owners in a seamless platform.
